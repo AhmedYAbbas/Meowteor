@@ -1,20 +1,17 @@
 #include <SFML/Graphics.hpp>
-#include "Meteor.h"
-#include "MeteorManager.h"
-#include <vector>
-using namespace std;
+#include "Player.h"
+#include "Shield.h"
+#include <SFML/Window.hpp>
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "game", sf::Style::Fullscreen);
-	sf::CircleShape shape(20.0f);
-	shape.setFillColor(sf::Color::Yellow);
+	sf::RenderWindow window(sf::VideoMode(1000, 1080), "game");
+	sf::Vector2f mousePos;
+	Player player;
+	Shield shield(mousePos);
+	sf::Clock clock;
+	float time = 0;
+	sf::Window::setMouseCursorVisible(false);
 
-	srand(sin(time(nullptr)) * 1000);
-
-	MeteorManager meteors;
-
-	Clock clock;
-	float dt = 0.02;
 
 	while (window.isOpen())
 	{
@@ -23,16 +20,47 @@ int main() {
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-		}
-		window.clear();
 
-		if (clock.getElapsedTime().asMilliseconds() >= 0.016)
+			if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Left)
+			{
+				player.stop();
+			}
+			if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Right)
+			{
+				player.stop();
+			}
+
+			if (event.type == sf::Event::MouseMoved)
+			{
+				mousePos = (sf::Vector2f)sf::Mouse::getPosition(window);
+				
+
+			}
+
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+			player.moveL();
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+			player.moveR();
+		}
+	
+
+		if (clock.getElapsedTime().asMilliseconds() > 20)
 		{
-			meteors.Update(dt);
+
+			player.update();
+			shield.update(mousePos);
 			clock.restart();
 		}
 
-		meteors.Draw(&window);
+
+
+
+		window.clear();
+		window.draw(player.playerSprite);
+		window.draw(shield.shieldSprite);
 		window.display();
 	}
 
