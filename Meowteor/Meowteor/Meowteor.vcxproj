@@ -157,7 +157,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SFML.cpp" />
+    <ClCompile Include="Meowteor.cpp" />
+    <ClCompile Include="Meteor.cpp" />
+    <ClCompile Include="MeteorManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Meteor.h" />
+    <ClInclude Include="MeteorManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

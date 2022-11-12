@@ -15,8 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SFML.cpp">
+    <ClCompile Include="Meowteor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Meteor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeteorManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Meteor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeteorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
