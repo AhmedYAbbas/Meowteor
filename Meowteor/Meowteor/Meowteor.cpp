@@ -10,7 +10,7 @@ int main() {
 	Shield shield(mousePos);
 	sf::Clock clock;
 	float time = 0;
-	sf::Window::setMouseCursorVisible(false);
+	window.setMouseCursorVisible(false);
 
 
 	while (window.isOpen())

@@ -18,18 +18,32 @@
     <ClCompile Include="Meowteor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Meteor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MeteorManager.cpp">
+=======
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <ClInclude Include="Meteor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MeteorManager.h">
+=======
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
